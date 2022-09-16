@@ -8,12 +8,26 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('laravel_iot_manager_table', function (Blueprint $table) {
+        Schema::create('iot_device', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->string('name');
+            $table->string('identifier')->comment('Unique identifier for in AWS IoT');
+            $table->string('certificate_id');
+            $table->string('certificate_arn');
             $table->timestamps();
+            $table->softDeletes();
+        });
+
+        Schema::create('model_has_iot_device', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('iot_device_id');
+            $table->string('model_type');
+            $table->unsignedBigInteger('model_id');
+            $table->index(['model_id', 'model_type'], 'model_has_iot_device_index');
+            $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('iot_device_id')->references('id')->on('iot_device')->onDelete('cascade');
         });
     }
 };
