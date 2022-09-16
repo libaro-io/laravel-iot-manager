@@ -1,10 +1,10 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Libaro-io\IoTManager;
 
 use Illuminate\Support\ServiceProvider;
 
-class SkeletonServiceProvider extends ServiceProvider
+class IoTManagerServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {

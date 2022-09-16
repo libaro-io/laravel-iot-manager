@@ -1,17 +1,17 @@
 {
-  "name": ":vendor_slug/:package_slug",
-  "description": ":package_description",
+  "name": "libaro-io/laravel-iot-manager",
+  "description": "Associate AWS Things with Eloquent models",
   "keywords": [
-    ":vendor_name",
+    "libaro-io",
     "laravel",
-    ":package_slug"
+    "laravel-iot-manager"
   ],
-  "homepage": "https://github.com/:vendor_slug/:package_slug",
+  "homepage": "https://github.com/libaro-io/laravel-iot-manager",
   "license": "MIT",
   "authors": [
     {
-      "name": ":author_name",
-      "email": "author@domain.com",
+      "name": "Kenny Depecker",
+      "email": "kenny@libaro.be",
       "role": "Developer"
     }
   ],
@@ -24,13 +24,13 @@
   },
   "autoload": {
     "psr-4": {
-      "VendorName\\Skeleton\\": "src",
-      "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+      "Libaro-io\\IoTManager\\": "src",
+      "Libaro-io\\IoTManager\\Database\\Factories\\": "database/factories"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "VendorName\\Skeleton\\Tests\\": "tests"
+      "Libaro-io\\IoTManager\\Tests\\": "tests"
     }
   },
   "scripts": {
@@ -44,10 +44,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "VendorName\\Skeleton\\SkeletonServiceProvider"
+        "Libaro-io\\IoTManager\\IoTManagerServiceProvider"
       ],
       "aliases": {
-        "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+        "IoTManager": "Libaro-io\\IoTManager\\Facades\\IoTManager"
       }
     }
   },

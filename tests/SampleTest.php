@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Libaro-io\IoTManager\Tests;
 
 class SampleTest extends TestCase
 {
