@@ -1,5 +1,5 @@
 <?php
-// config for Libaro-io/IoTManager
+// config for Libaro/IoTManager
 return [
 
 ];
