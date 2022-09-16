@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro-io\IoTManager\Facades;
+namespace Libaro\IoTManager\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

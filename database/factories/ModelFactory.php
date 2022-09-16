@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro-io\IoTManager\Database\Factories;
+namespace Libaro\IoTManager\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

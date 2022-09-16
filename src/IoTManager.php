@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro-io\IoTManager;
+namespace Libaro\IoTManager;
 
 class IoTManager
 {

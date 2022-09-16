@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro-io\IoTManager\Commands;
+namespace Libaro\IoTManager\Commands;
 
 use Illuminate\Console\Command;
 

@@ -3,6 +3,7 @@
   "description": "Associate AWS Things with Eloquent models",
   "keywords": [
     "libaro-io",
+    "libaro",
     "laravel",
     "laravel-iot-manager"
   ],
@@ -24,13 +25,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Libaro-io\\IoTManager\\": "src",
-      "Libaro-io\\IoTManager\\Database\\Factories\\": "database/factories"
+      "Libaro\\IoTManager\\": "src",
+      "Libaro\\IoTManager\\Database\\Factories\\": "database/factories"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Libaro-io\\IoTManager\\Tests\\": "tests"
+      "Libaro\\IoTManager\\Tests\\": "tests"
     }
   },
   "scripts": {
@@ -44,10 +45,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Libaro-io\\IoTManager\\IoTManagerServiceProvider"
+        "Libaro\\IoTManager\\IoTManagerServiceProvider"
       ],
       "aliases": {
-        "IoTManager": "Libaro-io\\IoTManager\\Facades\\IoTManager"
+        "IoTManager": "Libaro\\IoTManager\\Facades\\IoTManager"
       }
     }
   },

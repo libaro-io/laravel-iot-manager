@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro-io\IoTManager\Tests;
+namespace Libaro\IoTManager\Tests;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
