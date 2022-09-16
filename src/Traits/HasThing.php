@@ -4,7 +4,6 @@ namespace Libaro\IoTManager\Traits;
 
 trait HasThing
 {
-
     /**
      * Will activate Thing in AWS
      *
@@ -12,7 +11,6 @@ trait HasThing
      */
     public function activate()
     {
-
     }
 
     /**
@@ -22,7 +20,6 @@ trait HasThing
      */
     public function deactivate()
     {
-
     }
 
     /**
@@ -32,6 +29,5 @@ trait HasThing
      */
     public function generateCertificates()
     {
-
     }
 }
