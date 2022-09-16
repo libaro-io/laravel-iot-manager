@@ -23,6 +23,13 @@ php artisan vendor:publish --tag="laravel-iot-manager-migrations"
 php artisan migrate
 ```
 
+Add following variables to your .env:
+```bash
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_REGION
+```
+
 You can publish the config file with:
 
 ```bash
