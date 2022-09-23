@@ -8,6 +8,7 @@ use Aws\Iot\IotClient;
 use Illuminate\Support\Str;
 use Libaro\IoTManager\Interfaces\ThingInterface;
 use Libaro\IoTManager\Exceptions\DeviceAlreadyCreatedException;
+use Libaro\IoTManager\Models\IotDevice;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 final class AwsService implements ThingInterface
@@ -24,7 +25,7 @@ final class AwsService implements ThingInterface
         ]);
     }
 
-    public function create(string $name, string $identifier = null): void
+    public function create(string $name, string $identifier = null): IotDevice
     {
         if ($identifier === null) {
             $identifier = (string) Str::uuid();
@@ -39,7 +40,11 @@ final class AwsService implements ThingInterface
             'thingName' => $identifier,
         ]);
 
-        // TODO: store in the database
+        return new IotDevice([
+            'name' => $name,
+            'identifier' => $identifier,
+
+        ]);
     }
 
     public function activate(): void

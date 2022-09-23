@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('identifier')->comment('Unique identifier for in AWS IoT');
-            $table->string('certificate_id');
-            $table->string('certificate_arn');
+            $table->string('certificate_id')->nullable();
+            $table->string('certificate_arn')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
