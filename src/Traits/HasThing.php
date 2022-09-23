@@ -3,16 +3,13 @@
 namespace Libaro\IoTManager\Traits;
 
 use Libaro\IoTManager\Models\IotDevice;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Libaro\IoTManager\Services\AwsService;
-
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 trait HasThing
 {
-
     public function bootHasThing()
     {
-
     }
 
     /**
@@ -20,12 +17,13 @@ trait HasThing
      *
      * @return MorphOne
      */
-    public function thing (): MorphOne
+    public function thing(): MorphOne
     {
         return $this->morphOne(IotDevice::class, 'model');
     }
 
-    public function addThing (IotDevice $thing) {
+    public function addThing(IotDevice $thing)
+    {
         $this->thing()->save($thing);
     }
 
