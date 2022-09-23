@@ -6,9 +6,9 @@ namespace Libaro\IoTManager\Services;
 
 use Aws\Iot\IotClient;
 use Illuminate\Support\Str;
+use Libaro\IoTManager\Models\IotDevice;
 use Libaro\IoTManager\Interfaces\ThingInterface;
 use Libaro\IoTManager\Exceptions\DeviceAlreadyCreatedException;
-use Libaro\IoTManager\Models\IotDevice;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 final class AwsService implements ThingInterface
