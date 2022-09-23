@@ -67,7 +67,7 @@ final class AwsService implements ThingInterface
     {
         $this->client->UpdateCertificate([
             'certificateId' => $device->certificate_id,
-            'newStatus' => 'ACTIVE'
+            'newStatus' => 'ACTIVE',
         ]);
 
         return true;
@@ -77,7 +77,7 @@ final class AwsService implements ThingInterface
     {
         $this->client->UpdateCertificate([
             'certificateId' => $device->certificate_id,
-            'newStatus' => 'INACTIVE'
+            'newStatus' => 'INACTIVE',
         ]);
 
         return true;
@@ -94,7 +94,7 @@ final class AwsService implements ThingInterface
 
         $this->client->attachThingPrincipal([
             'principal' => $device->certificate_arn, // the AWS certification ARN
-            'thingName' => $device->identifier
+            'thingName' => $device->identifier,
         ]);
 
         return true;
