@@ -8,9 +8,11 @@ interface ThingInterface
 {
     public function create(string $name, string $identifier = null): IotDevice;
 
-    public function activate(): void;
+    public function delete(IotDevice $device): bool;
 
-    public function deactivate(): void;
+    public function activate(): bool;
 
-    public function generateCertificates(): void;
+    public function deactivate(): bool;
+
+    public function generateCertificates(): bool;
 }

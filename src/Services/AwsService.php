@@ -40,24 +40,40 @@ final class AwsService implements ThingInterface
             'thingName' => $identifier,
         ]);
 
-        return new IotDevice([
+        $iotDevice = new IotDevice([
             'name' => $name,
             'identifier' => $identifier,
-
         ]);
+
+        $iotDevice->save();
+
+        return $iotDevice;
     }
 
-    public function activate(): void
+    public function delete(IotDevice $device): bool
+    {
+        $this->client->deleteThing([
+            'thingName' => $device->identifier
+        ]);
+
+        IotDevice::query()
+            ->where('identifier', '=', $device->identifier)
+            ->delete();
+        
+        return true;
+    }
+
+    public function activate(): bool
     {
         // TODO: Implement activate() method.
     }
 
-    public function deactivate(): void
+    public function deactivate(): bool
     {
         // TODO: Implement deactivate() method.
     }
 
-    public function generateCertificates(): void
+    public function generateCertificates(): bool
     {
         // TODO: Implement generateCertificates() method.
     }
