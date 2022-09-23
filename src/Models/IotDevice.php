@@ -6,6 +6,7 @@ namespace Libaro\IoTManager\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 /**
  * @property int $id
@@ -28,4 +29,9 @@ class IotDevice extends Model
         'certificate_id',
         'certificate_arn',
     ];
+
+    public function model(): MorphTo
+    {
+        return $this->morphTo();
+    }
 }
