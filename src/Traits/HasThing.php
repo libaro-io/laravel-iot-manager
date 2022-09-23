@@ -27,19 +27,21 @@ trait HasThing
         $this->thing()->save($thing);
     }
 
-    public function createThing(string $name = null, string $identifier = null) {
+    public function createThing(string $name = null, string $identifier = null)
+    {
         $thing = app(AwsService::class)->create($name ?? __CLASS__ . '-' . $this->id, $identifier ?? __CLASS__ . '-' . $this->id);
         $this->addThing($thing);
     }
 
-    public function removeThing(IotDevice $thing) {
+    public function removeThing(IotDevice $thing)
+    {
         $this->thing()->delete();
     }
 
     /**
      * Will activate Thing in AWS
      *
-     * @return boolean
+     * @return bool
      */
     public function activate()
     {
@@ -49,7 +51,7 @@ trait HasThing
     /**
      * Will deactivate Thing in AWS
      *
-     * @return boolean
+     * @return bool
      */
     public function deactivate()
     {
@@ -59,7 +61,7 @@ trait HasThing
     /**
      * Generate necessary certificates for Thing in AWS
      *
-     * @return boolean
+     * @return bool
      */
     public function generateCertificates()
     {
