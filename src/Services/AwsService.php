@@ -53,13 +53,13 @@ final class AwsService implements ThingInterface
     public function delete(IotDevice $device): bool
     {
         $this->client->deleteThing([
-            'thingName' => $device->identifier
+            'thingName' => $device->identifier,
         ]);
 
         IotDevice::query()
             ->where('identifier', '=', $device->identifier)
             ->delete();
-        
+
         return true;
     }
 
