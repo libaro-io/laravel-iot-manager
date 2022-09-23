@@ -10,9 +10,9 @@ interface ThingInterface
 
     public function delete(IotDevice $device): bool;
 
-    public function activate(): bool;
+    public function activate(IotDevice $device): bool;
 
-    public function deactivate(): bool;
+    public function deactivate(IotDevice $device): bool;
 
-    public function generateCertificates(): bool;
+    public function generateCertificates(IotDevice $device): bool;
 }

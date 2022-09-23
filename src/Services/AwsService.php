@@ -63,19 +63,41 @@ final class AwsService implements ThingInterface
         return true;
     }
 
-    public function activate(): bool
+    public function activate(IotDevice $device): bool
     {
-        // TODO: Implement activate() method.
+        $this->client->UpdateCertificate([
+            'certificateId' => $device->certificate_id,
+            'newStatus' => 'ACTIVE'
+        ]);
+
+        return true;
     }
 
-    public function deactivate(): bool
+    public function deactivate(IotDevice $device): bool
     {
-        // TODO: Implement deactivate() method.
+        $this->client->UpdateCertificate([
+            'certificateId' => $device->certificate_id,
+            'newStatus' => 'INACTIVE'
+        ]);
+
+        return true;
     }
 
-    public function generateCertificates(): bool
+    public function generateCertificates(IotDevice $device): bool
     {
-        // TODO: Implement generateCertificates() method.
+        $keysAndCertificates = $this->client->CreateKeysAndCertificate();
+
+        $device->certificate_id = $keysAndCertificates->get('certificateId');
+        $device->certificate_arn = $keysAndCertificates->get('certificateArn');
+
+        $device->save();
+
+        $this->client->attachThingPrincipal([
+            'principal' => $device->certificate_arn, // the AWS certification ARN
+            'thingName' => $device->identifier
+        ]);
+
+        return true;
     }
 
     private function checkIfExists(string $identifier): bool
